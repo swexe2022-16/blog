@@ -8,4 +8,14 @@ class HomesController < ApplicationController
   def new
       @home = Home.new
   end
+  
+  def create
+    @home = Home.create(home_params)
+    redirect_to homes_path
+  end
+
+  private
+    def home_params
+      params.require(:home).permit(:title)
+    end
 end
