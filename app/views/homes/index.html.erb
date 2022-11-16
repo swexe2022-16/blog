@@ -1,0 +1,8 @@
+<h3>home</h3>
+
+<% if logged_in? %>
+  <%= render 'homes/logged_in' %>
+<% else %>
+  <%= render 'homes/not_logged_in' %>
+<% end %>
+
