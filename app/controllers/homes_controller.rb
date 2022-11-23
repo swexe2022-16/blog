@@ -13,7 +13,23 @@ class HomesController < ApplicationController
     @home = Home.create(home_params)
     redirect_to homes_path
   end
-
+  
+  def edit
+    @home = Home.find(params[:id])
+  end 
+  
+  def update
+    @home = Home.find(params[:id])
+    @home.update(home_params)
+    redirect_to homes_path
+  end
+  
+  def destroy
+    @home = Home.find(params[:id])
+    @home.destroy
+    redirect_to home_url
+  end
+    
   private
     def home_params
       params.require(:home).permit(:title)

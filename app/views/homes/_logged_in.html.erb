@@ -15,8 +15,13 @@
       <% end %>
     </tbody>
 </table>
-<%= link_to "新規追加", new_photo_path %>
+<%= link_to "新規投稿", new_photo_path %>
 
-<%= link_to "新規追加", new_home_path %>
+<% current_user.photos.each do |photo| %>
+  <div>
+    <p><%= photo.caption %></p>
+    <%= image_tag photo.image %>
+  </div>
+<% end %>
 
 <%= link_to "ログアウト", logout_path, method: :delete %>

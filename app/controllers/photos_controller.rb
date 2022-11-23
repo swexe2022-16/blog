@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  #before_action :authenticate_user!
+  #before_action :logged_in_user, only[:create]
   
   def new
     @photo = current_user.photos.new
