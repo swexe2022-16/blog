@@ -1,17 +1,12 @@
 <h2>ブログ一覧</h2>
-<table>
-    <thead>
-      <% @homes.each do |f| %>
-        <div>
-        <p><%= home.caption %></p>
-        <%= image_tag home.image %>
-        </div>
-        <tr>
-          <td><%= link_to "編集", edit_home_path(home) %></td>
-          <td><%= link_to "削除", home_path(home), method: :delete %></td>
-        </tr>
-      <% end %>
-    </thead>
-</table>
+  <% @homes.each do |home| %>
+  <div>
+    <p><%= @homes.caption %></p>
+    <%= image_tag @homes.image if @homes.image.attached? %>
+  </div>
+  <td><%= link_to '編集', edit_home_path(home) %></td>
+  <td><%= link_to '削除', home_path(home), method: :delete %></td>
+  <% end %>
+
 <%= link_to "新規投稿", new_home_path %>
 <%= link_to "ログアウト", logout_path, method: :delete %>
