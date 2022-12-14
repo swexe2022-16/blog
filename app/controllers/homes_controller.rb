@@ -28,13 +28,13 @@ class HomesController < ApplicationController
   def update
     @homes = Home.find(params[:id])
     @homes.update(home_params)
-    redirect_to homes_url
+    redirect_to homes_path
   end
   
   def destroy
     @homes = Home.find(params[:id])
     @homes.destroy
-    redirect_to home_url
+    redirect_to homes_path
   end
   
   private
