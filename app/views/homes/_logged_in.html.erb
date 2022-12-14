@@ -1,8 +1,8 @@
 <h2>ブログ一覧</h2>
   <% @homes.each do |home| %>
   <div>
-    <p><%= @homes.caption %></p>
-    <%= image_tag @homes.image if @homes.image.attached? %>
+    <p><%= home.caption %></p>
+    <%= image_tag home.image if home.image.attached? %>
   </div>
   <td><%= link_to '編集', edit_home_path(home) %></td>
   <td><%= link_to '削除', home_path(home), method: :delete %></td>
